@@ -1,0 +1,264 @@
+\documentclass[12pt]{report}
+\usepackage{graphicx} % For including images
+\usepackage{geometry} % For page layout
+\usepackage{hyperref} % For hyperlinks
+\usepackage{fancyhdr} % For custom headers and footers
+\usepackage{setspace} % For line spacing
+\usepackage{booktabs} % For better tables
+\usepackage{amsmath}  % For mathematical formatting
+\usepackage{tabularx} % For tables with automatic width
+\usepackage{listings} % For code highlighting
+\usepackage{xcolor}   % For code highlighting
+\usepackage{pdfpages} % For including PDF pages
+
+% The next few lines are for setting up the layout and formatting
+\geometry{letterpaper, margin=1in}      % Page layout
+\setlength{\parskip}{1em}               % Space between paragraphs
+\setlength{\parindent}{0pt}             % No indentation
+\pagestyle{fancy}                       % Custom header and footer
+\fancyhf{}                              % Clear header and footer
+\rhead{\thepage}                        % Right header with page number
+\lhead{\textit{Project Title}}          % Left header with project title
+\cfoot{}                               % Center footer empty
+\renewcommand{\headrulewidth}{0.2pt}   % Header rule width
+\setlength{\headheight}{15pt}          % Header height
+\setlength{\headsep}{10pt}             % Space between header and text
+\setlength{\textheight}{9in}           % Text height
+\setlength{\textwidth}{6.5in}          % Text width
+\setlength{\topmargin}{-0.5in}         % Top margin
+\setlength{\oddsidemargin}{0in}        % Left margin
+\setlength{\evensidemargin}{0in}       % Right margin
+
+% Code highlighting settings
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{white},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=none,
+    tabsize=2,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=false,
+    escapeinside={\%*}{*)}
+}
+
+% Set the indentation length
+\setlength{\parindent}{2em}
+
+% Correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+% Custom section, subsection, and subsubsection numbering
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thesubsection}{\Alph{subsection}.}
+\renewcommand{\thesubsubsection}{\Alph{\Alph{subsubsection}}.}
+
+% Center section titles and remove numbering
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}{\centering\normalfont\scshape}}
+\makeatother
+
+% Format subsection titles with run-in style
+\makeatletter
+\renewcommand{\subsection}{\@startsection
+  {subsection}{2}{0pt}        % name, level, indent
+  {1.5ex plus .2ex}           % space *before* subsection
+  {1ex plus .2ex}             % space *after* subsection
+  {\normalfont\scshape}       % style
+}
+\makeatother
+
+% Format subsubsection titles with run-in style
+\makeatletter
+\renewcommand{\subsubsection}{\@startsection
+  {subsubsection}{3}{1em}        % name, level, indent
+  {1ex plus .2ex}                % space *before* subsubsection
+  {0.5ex plus .2ex}              % space *after* subsubsection
+  {\normalfont\itshape}          % style
+}
+\makeatother
+
+\begin{document}
+
+% *** Cover Page ***
+% Uncomment the following line to include a cover page
+% \includepdf[pages=1, pagecommand={\thispagestyle{empty}}]{cover_page.pdf}
+
+
+
+% *** Title Page ***
+% This section is for the title page
+% You should add your project's title and your first and last name and your 
+% semester and year. 
+\doublespacing
+\begin{titlepage}
+    \begin{center}
+        \vspace*{2in}
+        {\Large \textbf{Project\_Title}}\\[0.2cm]
+        {\Large Final Report}\\[0.2cm]
+        \textit{A Project}\\[0.2cm]
+        \textit{Presented}\\[0.2cm]
+        \textit{To the Faculty of}\\[0.2cm]
+        \textbf{California State University, Dominguez Hills}\\[0.2cm]
+        \textit{In Partial Fulfillment of the Requirements}\\[0.2cm]
+        \textit{For the Degree Bachelor of Science in Computer Science}\\[2cm]
+        \textbf{By}\\[0.2cm]
+        Your\_First\_Name Your\_Last\_Name\\[0.2cm]
+        Semester Year
+    \end{center}
+\end{titlepage}
+
+\setcounter{page}{3}
+
+% *** Approval Page ***
+% This section is for the approval page
+% You should add your project's title and your first and last name in
+% capital letters.
+\newpage
+\thispagestyle{empty}
+\text{} \\
+\textbf{PROJECT:} PROJECT\_TITLE\_IN\_CAPITAL\_LETTER\\[0.2cm]
+\textbf{AUTHOR:} YOUR\_FIRST\_NAME YOUR\_LAST\_NAME
+
+\vspace{6in}
+\hfill \textbf{APPROVED BY:}\\ \\
+\vspace{2cm}
+\hfill \noindent\rule{6cm}{0.4pt}
+
+% *** Acknowledgements ***
+% This section is for acknowledgements or dedications
+\newpage
+\section*{Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
+I would like to thank ...
+
+% *** Table of Contents and List of Figures ***
+% This section is for the table of contents and list of figures 
+% It should automatically be updated as you add sections and figures
+% You do not need to manually add sections to the table of contents
+\singlespacing
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+
+% *** Abstract ***
+% This section is for the abstract of your report
+\doublespacing
+\newpage
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+You abstract goes here...
+
+% *** Main Content ***
+% *** Section 1: Introduction ***
+% This section can be used for introduction or background information
+\newpage
+\section{Introduction}
+\subsection{Background}
+Add Background information here...
+
+\subsection{Project Description}
+Your project description goes here...
+
+\subsection{Target Audience}
+Add target audience information here...
+
+\subsection{Motivation}
+Add motivation information here...
+
+% *** Section 2: Related Work ***
+% This section can be used for related work or literature review
+\newpage
+\section{Related Work}
+\subsection{Related Work 1}
+Add related work 1 information here...
+
+\subsection{Related Work 2}
+Add related work 2 information here...
+
+\subsection{Related Work n}
+Add related work n information here...
+
+% *** Section 3: Other Section Title ***
+% This section can be used for any other information
+% You can add any other section title and content here
+% You can as well duplicated this section for more sections
+\newpage
+\section{Other Section Title}
+\subsection{Other Subsection Title}
+Add other subsection information here if needed...
+
+% *** Section 4: Methodology ***
+% This section can be used for any methodology or analysis
+\newpage
+\section{Methodology}
+Methodology information goes here...
+
+% *** Section 5: Discussion ***
+% This section can be used for any additional discussion or analysis
+\newpage
+\section{Discussion}
+Discussion information goes here...
+
+% *** Section 6: Conclusion ***
+% This section can be used for conclusion or summary
+\newpage
+\section{Conclusion}
+Conclusion information goes here...
+
+% *** Section 7: Future Work ***
+% This section can be used for future work or next steps
+\newpage
+\section{Future Work}
+Future work information goes here...
+
+% *** Section 8: References ***
+% This section can be used for references or bibliography
+\newpage
+\section{References}
+\begin{itemize}
+    \item blablabla
+    \item blablabla
+    \item blablabla
+\end{itemize}
+
+% *** Section 9: Code ***
+% This section can be used for code snippets or examples
+\newpage
+\section{Code}
+\begin{lstlisting}[language=Python, caption={Python Code Snippet 1}]
+def example_function():
+    print("This is an example function.")
+    return True
+\end{lstlisting}
+
+\begin{lstlisting}[language=Go, caption={Golang Code Snippet 2}]
+package main
+import "fmt"
+func main() {
+    fmt.Println("This is an example Golang function.")
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=C++, caption={C++ Code Snippet 3}]
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout << "This is an example C++ function." << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\end{document}
