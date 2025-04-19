@@ -1,7 +1,4 @@
-# exclude all latex compiled files except the main document
-*.lof
-*.log
-*.lot
-*.out
-*.toc
-*.aux
+# esclude the /bin directory
+# This is the directory where the compiled files are stored
+# It is not necessary to include it in the repository
+/bin
