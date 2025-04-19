@@ -1,6 +1,6 @@
 # Final Report Template - LaTeX
 
-> [!INFO]
+> [!NOTE]
 >
 > This template is designed to be a starting point. You can modify it to fit your specific project requirements.
 > Make sure to check the formatting guidelines provided by your department.
