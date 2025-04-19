@@ -37,14 +37,17 @@ jobs:
 
       - name: 🔧 Install LaTeX (Windows)
         if: runner.os == 'Windows'
-        shell: pwsh
+        shell: powershell
         run: |
           choco install miktex --yes
-          refreshenv
-          miktexsetup finish
-          initexmf --admin --update-fndb
-          initexmf --mkmaps
-          initexmf --update-format
+          # Add miktex bin to PATH manually
+          $miktexPath = "C:\Program Files\MiKTeX\miktex\bin\x64"
+          $env:Path += ";$miktexPath"
+          # Update MiKTeX packages
+          & "$miktexPath\mpm.exe" --update-db
+          & "$miktexPath\mpm.exe" --update
+          & "$miktexPath\mpm.exe" --install=latexmk
+
 
       - name: 🛠️ Compile LaTeX Report (Linux/macOS)
         if: runner.os != 'Windows'
@@ -55,3 +58,4 @@ jobs:
         if: runner.os == 'Windows'
         run: build.bat
         shell: cmd
+
