@@ -41,8 +41,16 @@ jobs:
         run: |
           choco install miktex --yes
           $miktexPath = "C:\Program Files\MiKTeX\miktex\bin\x64"
-          echo "Adding MiKTeX path: $miktexPath"
-          echo "$miktexPath" | Out-File -Append -Encoding ascii $env:GITHUB_PATH
+          echo "##[add-path]$miktexPath"
+          echo "Added MiKTeX to PATH: $miktexPath"
+          # Wait a moment for things to settle
+          Start-Sleep -Seconds 5
+          # Install required packages just in case
+          & "$miktexPath\mpm.exe" --update-db
+          & "$miktexPath\mpm.exe" --update
+          & "$miktexPath\mpm.exe" --install=latexmk
+          & "$miktexPath\mpm.exe" --install=pdflatex
+
 
       - name: 🛠️ Compile LaTeX Report (Linux/macOS)
         if: runner.os != 'Windows'
