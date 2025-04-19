@@ -33,7 +33,6 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install --cask mactex-no-gui
-          sudo tlmgr update --self --all
 
       - name: 🔧 Install LaTeX (Windows)
         if: runner.os == 'Windows'
