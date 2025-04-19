@@ -1,0 +1,7 @@
+# exclude all latex compiled files except the main document
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.aux
