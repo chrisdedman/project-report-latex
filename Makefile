@@ -2,10 +2,10 @@ SOURCES=template_final_report.tex
 OUTPUT=template_final_report.pdf
 INTERMEDIATE_DIR=bin
 
-all: $(OUTPUT)
+all: build
 
 # How to generate the PDF from the LaTeX source
-$(OUTPUT): $(SOURCES)
+build:
 	mkdir -p $(INTERMEDIATE_DIR)
 	pdflatex -output-directory=$(INTERMEDIATE_DIR) $(SOURCES)
 	mv $(INTERMEDIATE_DIR)/$(OUTPUT) .
