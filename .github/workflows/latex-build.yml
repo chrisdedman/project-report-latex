@@ -32,7 +32,8 @@ jobs:
       - name: 🔧 Install LaTeX (macOS)
         if: runner.os == 'macOS'
         run: |
-          brew install --cask mactex-no-gui
+          brew install --cask mactex-no-gui 
+          eval "$(/usr/libexec/path_helper)"
 
       - name: 🔧 Install LaTeX (Windows)
         if: runner.os == 'Windows'
