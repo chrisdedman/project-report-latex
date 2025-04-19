@@ -1,0 +1,57 @@
+name: Build LaTeX Report
+
+on:
+  push:
+    paths:
+      - '**.tex'
+      - 'Makefile'
+      - 'build.bat'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔧 Install LaTeX (Ubuntu)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-latex-recommended \
+                                  texlive-latex-extra texlive-fonts-recommended \
+                                  texlive-science texlive-xetex texlive-lang-english
+
+      - name: 🔧 Install LaTeX (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          brew install --cask mactex-no-gui
+          sudo tlmgr update --self --all
+
+      - name: 🔧 Install LaTeX (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          choco install miktex --yes
+          refreshenv
+          miktexsetup finish
+          initexmf --admin --update-fndb
+          initexmf --mkmaps
+          initexmf --update-format
+
+      - name: 🛠️ Compile LaTeX Report (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: make
+        shell: bash
+
+      - name: 🛠️ Compile LaTeX Report (Windows)
+        if: runner.os == 'Windows'
+        run: build.bat
+        shell: cmd
