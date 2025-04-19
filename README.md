@@ -96,4 +96,5 @@ Update the following in report.tex:
 
 ## 📚 License
 
-This template is free to use and modify for academic purposes.
+This template is free to use and modify for academic purposes. 
+See [LICENSE](LICENSE) for more details.
