@@ -18,7 +18,7 @@ This repository contains a LaTeX template for a Bachelor of Science in Computer 
 
 > [!NOTE]
 >
-> If you want to include a custom cover page, add the cover_page.pdf to the root directory and uncomment the line in `report.tex` that includes it.
+> If you want to include a custom cover page, add the cover_page.pdf to the root directory and uncomment the line in `template_final_report.tex` that includes it.
 
 ## 📌 Features
 
@@ -63,8 +63,9 @@ mkdir -p bin
 pdflatex -output-directory=bin template_final_report.tex
 mv bin/template_final_report.pdf .
 ```
-> [!NOTE]
+> [!IMPORTANT]
 > Replace mv with move on Windows.
+
 ## ✍️ Customization
 
 Update the following in report.tex:
