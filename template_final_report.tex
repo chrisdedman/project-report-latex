@@ -1,7 +1,30 @@
+% --------------------------------------------------------------------------
+%
 % LaTeX Document for Computer Science Academic Report
 % Template designed by Christopher Dedman Rollet in Spring 2025
 % This document is a template for writing an academic report in LaTeX.
 % You are free to use and modify this template for your own projects.
+%
+% Author: Christopher Dedman Rollet
+% Date: Spring 2025
+% Version: 1.0
+% License: MIT License (see LICENSE file for details)
+%
+% Dependencies:
+% - setspace package for double spacing
+% - pdfpages package for including PDF pages
+% - listings package for code listings
+% - xcolor package for color support
+%
+% Usage Instructions:
+% 1. Ensure you have the required packages installed.
+% 2. Replace the placeholder text with your content.
+% 3. Compile the document using pdflatex.
+%
+% Contact:
+% - Website: http://chrisdedman.vercel.app 
+%
+% --------------------------------------------------------------------------
 
 \documentclass[12pt]{report}
 \usepackage{graphicx} % For including images
@@ -14,7 +37,8 @@
 \usepackage{listings} % For code highlighting
 \usepackage{xcolor}   % For code highlighting
 \usepackage{pdfpages} % For including PDF pages
-\usepackage{hyperref} % For hyperlinks
+\usepackage{caption}  % For customizing captions
+\usepackage{hyperref} % For hyperlinks (keep this package at the end)
 
 % The next few lines are for setting up the layout and formatting
 \geometry{letterpaper, margin=1in}      % Page layout
@@ -23,24 +47,24 @@
 \pagestyle{fancy}                       % Custom header and footer
 \fancyhf{}                              % Clear header and footer
 \rhead{\thepage}                        % Right header with page number
-\cfoot{}                               % Center footer empty
-\renewcommand{\headrulewidth}{0.1pt}   % Header rule width
-\setlength{\headheight}{15pt}          % Header height
-\setlength{\headsep}{10pt}             % Space between header and text
-\setlength{\textheight}{9in}           % Text height
-\setlength{\textwidth}{6.5in}          % Text width
-\setlength{\topmargin}{-0.5in}         % Top margin
-\setlength{\oddsidemargin}{0in}        % Left margin
-\setlength{\evensidemargin}{0in}       % Right margin
+\cfoot{}                                % Center footer empty
+\renewcommand{\headrulewidth}{0.1pt}    % Header rule width
+\setlength{\headheight}{15pt}           % Header height
+\setlength{\headsep}{10pt}              % Space between header and text
+\setlength{\textheight}{9in}            % Text height
+\setlength{\textwidth}{6.5in}           % Text width
+\setlength{\topmargin}{-0.5in}          % Top margin
+\setlength{\oddsidemargin}{0in}         % Left margin
+\setlength{\evensidemargin}{0in}        % Right margin
 
 % Code style with listings
 \definecolor{codegray}{gray}{0.95}
 \definecolor{darkergreen}{RGB}{0,100,0}
 \lstset{
     basicstyle=\ttfamily\scriptsize,
-    keywordstyle=\color{blue},
+    keywordstyle=\color{blue}\bfseries,
     stringstyle=\color{red},
-    commentstyle=\color{darkergreen},
+    commentstyle=\color{darkergreen}\itshape,
     numbers=left,
     numberstyle=\tiny\color{gray},
     stepnumber=1,
@@ -94,6 +118,9 @@
   {\normalfont\itshape}          % style
 }
 \makeatother
+
+% Customizing captions
+\captionsetup{font=small, labelfont=bf}
 
 \begin{document}
 
@@ -189,7 +216,7 @@ This is the abstract of your project report. It should summarize the main points
 \newpage
 \section{Introduction}
 \subsection{Background}
-Add Background information here...
+Add background information here...
 
 \subsection{Project Description}
 Your project description goes here...
@@ -275,13 +302,14 @@ Future work information goes here...
 % This section can be used for code snippets or examples
 \newpage
 \section{Code}
-\begin{lstlisting}[language=Python, caption={Python Code Snippet 1}]
+\begin{lstlisting}[language=Python, caption={Python Code Snippet}]
 def example_function():
+    # This is a comment
     print("This is an example function.")
     return True
 \end{lstlisting}
 
-\begin{lstlisting}[language=Go, caption={Golang Code Snippet 2}]
+\begin{lstlisting}[language=Go, caption={Golang Code Snippet}]
 package main
 import "fmt"
 func main() {
@@ -289,11 +317,12 @@ func main() {
 }
 \end{lstlisting}
 
-\begin{lstlisting}[language=C++, caption={C++ Code Snippet 3}]
+\begin{lstlisting}[language=C++, caption={C++ Code Snippet}]
 #include <iostream>
 using namespace std;
 int main()
 {
+    // This is a comment
     cout << "This is an example C++ function." << endl;
     return 0;
 }
