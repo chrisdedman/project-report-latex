@@ -1,3 +1,8 @@
+% LaTeX Document for Computer Science Academic Report
+% Template designed by Christopher Dedman Rollet in Spring 2025
+% This document is a template for writing an academic report in LaTeX.
+% You are free to use and modify this template for your own projects.
+
 \documentclass[12pt]{report}
 \usepackage{graphicx} % For including images
 \usepackage{geometry} % For page layout
@@ -30,11 +35,12 @@
 
 % Code style with listings
 \definecolor{codegray}{gray}{0.95}
+\definecolor{darkergreen}{RGB}{0,100,0}
 \lstset{
-    basicstyle=\ttfamily\footnotesize,
+    basicstyle=\ttfamily\scriptsize,
     keywordstyle=\color{blue},
     stringstyle=\color{red},
-    commentstyle=\color{green},
+    commentstyle=\color{darkergreen},
     numbers=left,
     numberstyle=\tiny\color{gray},
     stepnumber=1,
@@ -173,9 +179,9 @@ I would like to thank ...
 \addcontentsline{toc}{section}{Abstract}
 This is the abstract of your project report. It should summarize the main points of your project, including the problem you are addressing, your approach, and your results.
 
-% ------------------------------------------------
+% -----------------------------------------------------
 % *** Main Content ***
-% ------------------------------------------------
+% -----------------------------------------------------
 % ------------------------------------------------
 % *** Section 1: Introduction ***
 % ------------------------------------------------
