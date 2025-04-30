@@ -10,15 +10,15 @@ This repository contains a LaTeX template for a Bachelor of Science in Computer 
 ## 📁 Structure
 
 - `template_final_report.tex`: Main LaTeX source file
-- `cover_page.pdf`: (Optional) Custom cover page (commented in the source)
 - `figures/`: Folder for images and diagrams (if used)
-- `bin/`: Directory for intermediate files (created during compilation)
+- `bin/`: Directory for intermediate files (created during compilation using `make`)
 - `build.bat`: Windows batch file for building the report
 - `Makefile`: Makefile for building the report on macOS/Linux
 
 > [!NOTE]
 >
-> If you want to include a custom cover page, add the cover_page.pdf to the root directory and uncomment the line in `template_final_report.tex` that includes it.
+> Comment line with `\includepdf` if you want to remove the custom cover page. Or update the `cover_page.pdf` with your own.
+> Add your own figures in the `figures/` directory and reference them in the text.
 
 ## 📌 Features
 
