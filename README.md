@@ -72,7 +72,8 @@ Update the following in report.tex:
 
 - Project_Title, Your_First_Name Your_Last_Name
 - Replace placeholders in each section (e.g., Abstract, Introduction, etc.)
-- Uncomment line with `\includepdf` if you want to add a custom cover page
+- Comment line with `\includepdf` if you want to remove the custom cover page. Or update the cover_page.pdf with your own.
+- Add your own figures in the `figures/` directory and reference them in the text.
 
 ## 📄 Example Sections
 
