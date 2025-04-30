@@ -137,6 +137,7 @@
 % You should add your project's title and your first and last name and your 
 % semester and year. 
 \doublespacing
+\phantomsection
 \begin{titlepage}
     \begin{center}
         \vspace*{2in}
@@ -163,6 +164,8 @@
 % You should add your project's title and your first and last name in
 % capital letters.
 \newpage
+\phantomsection
+\addcontentsline{toc}{section}{Approval Page}
 \thispagestyle{empty}
 \text{} \\
 \textbf{PROJECT:} PROJECT\_TITLE\_IN\_CAPITAL\_LETTER\\[0.2cm]
@@ -190,10 +193,16 @@ I would like to thank ...
 % You do not need to manually add sections to the table of contents
 \singlespacing
 \newpage
+\phantomsection
+\addcontentsline{toc}{section}{Table of Contents}
 \tableofcontents
 \newpage
+\phantomsection
+\addcontentsline{toc}{section}{List of Figures}
 \listoffigures
 \newpage
+\phantomsection
+\addcontentsline{toc}{section}{List of Tables}
 \listoftables
 
 % ------------------------------------------------
