@@ -53,7 +53,7 @@ make clean
 #### ✅ Install MiKTeX
 To build this LaTeX project on Windows, you’ll first need to install **MiKTeX**:
 
-1. Go to the [MiKTeX installation guide](https://miktex.org/howto/deploy-miktex).
+1. Go to the [MiKTeX installation guide](https://miktex.org/download).
 2. Download and install the appropriate Windows version.
 3. After installation, **close and reopen your terminal** to ensure the environment variables are refreshed.
 
