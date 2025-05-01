@@ -47,12 +47,12 @@ make clean
 ### 🔧 Windows (with PowerShell)
 
 ```powershell
-build.bat
+.\build.bat
 ```
 To clean intermediate files:
 
 ```powershell
-build.bat clean
+.\build.bat clean
 ```
 
 ### 🛠️ Manual Compilation (All OS)
