@@ -33,8 +33,12 @@ This repository contains a LaTeX template for a Bachelor of Science in Computer 
 
 You can build the report using the CLI. Intermediate files will be placed in the bin/ directory, and the final PDF will appear in the root.
 
-### 🔧 macOS & Linux (with make)
+### 🔧 MacOS & Linux (with make)
+> [!NOTE]
+> 
+>  Ensure you have `pdflatex` installed before running `make`.
 
+After cloning this project, navigate to the root directory and run the following:
 ```bash
 make
 ```
@@ -46,25 +50,45 @@ make clean
 
 ### 🔧 Windows (with PowerShell)
 
+#### ✅ Install MiKTeX
+To build this LaTeX project on Windows, you’ll first need to install **MiKTeX**:
+
+1. Go to the [MiKTeX installation guide](https://miktex.org/howto/deploy-miktex).
+2. Download and install the appropriate Windows version.
+3. After installation, **close and reopen your terminal** to ensure the environment variables are refreshed.
+
+To verify the installation:
+
+```powershell
+pdflatex --version
+```
+
+If you see version info and no error, you're ready to build the project.
+#### ▶️ Build the PDF
+
+Navigate to the root of this project directory and run:
 ```powershell
 .\build.bat
 ```
-To clean intermediate files:
-
-```powershell
-.\build.bat clean
-```
+This will generate the PDF in the correct location.
 
 ### 🛠️ Manual Compilation (All OS)
 
-If you'd like to compile manually using pdflatex:
+If you'd like to compile manually using `pdflatex`:
+
+#### macOS/Linux:
 ```bash
 mkdir -p bin
 pdflatex -output-directory=bin template_final_report.tex
 mv bin/template_final_report.pdf .
 ```
-> [!IMPORTANT]
-> Replace mv with move on Windows.
+#### Windows (PowerShell):
+
+```powershell
+mkdir bin
+pdflatex -output-directory=bin template_final_report.tex
+move bin\template_final_report.pdf .
+```
 
 ## ✍️ Customization
 
