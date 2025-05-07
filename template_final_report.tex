@@ -104,19 +104,19 @@
 
 \makeatletter
 \renewcommand{\subsection}{\@startsection
-  {subsection}{2}{0pt}
-  {1.5ex plus .2ex}
-  {1ex plus .2ex}
-  {\normalfont\scshape}
+  {subsection}{2}{0pt}        % name, level, indent
+  {1.5ex plus .2ex}           % space *before* subsection
+  {1ex plus .2ex}             % space *after* subsection
+  {\normalfont\scshape}       % style
 }
 \makeatother
 
 \makeatletter
 \renewcommand{\subsubsection}{\@startsection
-  {subsubsection}{3}{1em}
-  {1ex plus .2ex}
-  {0.5ex plus .2ex}
-  {\normalfont\itshape}
+  {subsubsection}{3}{1em}     % name, level, indent
+  {1ex plus .2ex}             % space *before* subsection
+  {0.5ex plus .2ex}           % space *after* subsection
+  {\normalfont\itshape}       % style
 }
 \makeatother
 
