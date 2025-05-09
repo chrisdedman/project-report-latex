@@ -2,23 +2,30 @@
 
 > [!NOTE]
 >
-> This template is designed to be a starting point. You can modify it to fit your specific project requirements.
-> Make sure to check the formatting guidelines provided by your department.
+> > This template is designed to be a starting point. Feel free to adapt it to your project requirements.  
+> Be sure to follow any formatting guidelines provided by your department.
 
-This repository contains a LaTeX template for a Bachelor of Science in Computer Science final project report at **California State University, Dominguez Hills**. It includes sections such as a title page, approval page, acknowledgements, abstract, table of contents, and structured content areas like methodology, discussion, and future work.
+This repository provides a LaTeX template for a Bachelor of Science in Computer Science final project report at **California State University, Dominguez Hills**. It includes:
 
-## 📁 Structure
+- Title page  
+- Approval page  
+- Acknowledgements  
+- Abstract  
+- Table of contents  
+- Structured sections (e.g., Methodology, Discussion, Future Work)
 
-- `template_final_report.tex`: Main LaTeX source file
-- `figures/`: Folder for images and diagrams (if used)
-- `bin/`: Directory for intermediate files (created during compilation using `make`)
-- `build.bat`: Windows batch file for building the report
-- `Makefile`: Makefile for building the report on macOS/Linux
+## 📁 Repository Structure
+
+- `template_final_report.tex` – Main LaTeX source  
+- `figures/` – Images and diagrams  
+- `bin/` – Intermediate files (created by `make`)  
+- `Makefile` – Build targets for macOS/Linux  
+- `build.bat` – Build script for Windows  
+- `LICENSE` – License details
 
 > [!NOTE]
 >
-> Comment line with `\includepdf` if you want to remove the custom cover page. Or update the `cover_page.pdf` with your own.
-> Add your own figures in the `figures/` directory and reference them in the text.
+> To remove the custom cover page, comment out the `\includepdf` line in `template_final_report.tex` or replace `cover_page.pdf` with your own.
 
 ## 📌 Features
 
@@ -35,8 +42,21 @@ You can build the report using the CLI. Intermediate files will be placed in the
 
 ### 🔧 MacOS & Linux (with make)
 > [!NOTE]
-> 
->  Ensure you have `pdflatex` installed before running `make`.
+>
+> **Prerequisite:** this project requires a working TeX Live installation.
+>
+> ```bash
+> # verify you have pdflatex
+> pdflatex --version
+> ```
+>
+> If it isn’t installed, on macOS run:
+>
+> ```bash
+> brew install --cask mactex    # full TeX Live (~4 GB)
+> # or for a smaller footprint:
+> brew install --cask basictex  # BasicTeX (~100 MB)
+> ```
 
 After cloning this project, navigate to the root directory and run the following:
 ```bash
@@ -92,12 +112,12 @@ move bin\template_final_report.pdf .
 
 ## ✍️ Customization
 
-Update the following in report.tex:
-
-- Project_Title, Your_First_Name Your_Last_Name
-- Replace placeholders in each section (e.g., Abstract, Introduction, etc.)
-- Comment line with `\includepdf` if you want to remove the custom cover page. Or update the cover_page.pdf with your own.
-- Add your own figures in the `figures/` directory and reference them in the text.
+In `template_final_report.tex`, update:
+- Project_Title
+- Your_First_Name Your_Last_Name
+- Section placeholders (in Abstract, Introduction, etc.)
+- Comment or replace the \includepdf line for cover page
+- Add figures to figures/ and reference them in your text
 
 ## 📄 Example Sections
 
