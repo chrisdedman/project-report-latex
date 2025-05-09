@@ -2,7 +2,7 @@
 
 > [!NOTE]
 >
-> > This template is designed to be a starting point. Feel free to adapt it to your project requirements.  
+> This template is designed to be a starting point. Feel free to adapt it to your project requirements.  
 > Be sure to follow any formatting guidelines provided by your department.
 
 This repository provides a LaTeX template for a Bachelor of Science in Computer Science final project report at **California State University, Dominguez Hills**. It includes:
