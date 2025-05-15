@@ -18,7 +18,8 @@
 %
 % Usage Instructions:
 % 1. Ensure you have the required packages installed.
-% 2. Replace the placeholder text with your content.
+% 2. Replace the placeholder text with your content in 
+%    the appropriate file sections.
 % 3. Compile the document using pdflatex.
 %
 % Contact:
@@ -36,34 +37,30 @@
 % -----------------------------------------------------
 % *** Front Content ***
 % -----------------------------------------------------
-% ------------------------------------------------
-% *** Cover Page ***
-% ------------------------------------------------
-% Comment the following line to remove the cover page
-\includepdf[pages=1, pagecommand={\thispagestyle{empty}}]{front/cover_page.pdf}
-
-\input{front/title_page.tex}
-\input{front/approval_page.tex}
-\input{front/acknowledgements.tex}
-\input{front/toc.tex}
-\input{front/abstract.tex}
+\input{front/cover_page.tex}        % Cover page: edit this file update the cover page
+\input{front/title_page.tex}        % Title page: edit this file to change the title and author
+\input{front/approval_page.tex}     % Approval page: edit this file to change the title and author
+\input{front/acknowledgements.tex}  % Acknowledgements: edit this file to add your acknowledgements
+\input{front/toc.tex}               % Table of contents: this will be generated automatically
+\input{front/abstract.tex}          % Abstract: edit this file to add your abstract
 
 % -----------------------------------------------------
 % *** Main Content ***
 % -----------------------------------------------------
-
-\input{contents/introduction.tex}
-\input{contents/related_work.tex}
-\input{contents/resources.tex}
-\input{contents/use_case.tex}
-\input{contents/sequence_diagram.tex}
-\input{contents/class_diagram.tex}
-\input{contents/er_diagram.tex}
-\input{contents/frontend.tex}
-\input{contents/backend.tex}
-\input{contents/contributions.tex}
-\input{contents/conclusion.tex}
-\input{contents/other.tex}
+\input{contents/introduction.tex}     % Introduction: edit this file to add your introduction
+\input{contents/related_work.tex}     % Related work: edit this file to add your related work
+\input{contents/resources.tex}        % Resources: edit this file to add your resources
+\input{contents/use_case.tex}         % Use case: edit this file to add your use case
+\input{contents/sequence_diagram.tex} % Sequence diagram: edit this file to add your sequence diagram
+\input{contents/class_diagram.tex}    % Class diagram: edit this file to add your class diagram
+\input{contents/er_diagram.tex}       % ER diagram: edit this file to add your ER diagram
+\input{contents/frontend.tex}         % Frontend: edit this file to add your frontend
+\input{contents/backend.tex}          % Backend: edit this file to add your backend
+\input{contents/contributions.tex}    % Contributions: edit this file to add your contributions
+\input{contents/conclusion.tex}       % Conclusion: edit this file to add your conclusion
+\input{contents/other.tex}            % Other: edit this file to add your other content
+% copy and paste the above line to add more sections, edit the file name
+% and create new files in the contents directory matching the file name.
 
 % -----------------------------------------------------
 % *** Back Content ***
