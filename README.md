@@ -2,26 +2,30 @@
 
 > [!NOTE]
 >
-> This template is designed to be a starting point. Feel free to adapt it to your project requirements.  
+> This template is designed to be a starting point. Feel free to adapt it to your project requirements.
 > Be sure to follow any formatting guidelines provided by your department.
 
 This repository provides a LaTeX template for a Bachelor of Science in Computer Science final project report at **California State University, Dominguez Hills**. It includes:
 
-- Title page  
-- Approval page  
-- Acknowledgements  
-- Abstract  
-- Table of contents  
+- Title page
+- Approval page
+- Acknowledgements
+- Abstract
+- Table of contents
 - Structured sections (e.g., Methodology, Discussion, Future Work)
 
 ## 📁 Repository Structure
 
-- `template_final_report.tex` – Main LaTeX source  
-- `figures/` – Images and diagrams  
-- `bin/` – Intermediate files (created by `make`)  
-- `Makefile` – Build targets for macOS/Linux  
-- `build.bat` – Build script for Windows  
-- `LICENSE` – License details
+- `preamble/`   – Package imports & custom macros
+- `front/`      – Title page, abstract, TOC, acknowledgements, etc.
+- `contents/`   – Main sections of the report (e.g., Introduction, Methodology)
+- `back/`       – Appendices (code listings, references)
+- `figures/`    – Images and diagrams
+- `bin/`        – Intermediate build files (created by `make`)
+- `Makefile`    – Build targets for macOS/Linux
+- `build.bat`   – Build script for Windows
+- `template_final_report.tex` – Main LaTeX file to compile
+- `LICENSE`     – License details
 
 > [!NOTE]
 >
@@ -112,12 +116,20 @@ move bin\template_final_report.pdf .
 
 ## ✍️ Customization
 
-In `template_final_report.tex`, update:
-- Project_Title
-- Your_First_Name Your_Last_Name
-- Section placeholders (in Abstract, Introduction, etc.)
-- Comment or replace the \includepdf line for cover page
-- Add figures to figures/ and reference them in your text
+**Preamble**:
+- edit ``preamble/packages.tex`` & ``preamble/macros.tex`` for packages or new commands.
+
+**Front Matter**:
+- update any of the ``.tex`` in ``front/`` for your title, abstract, acknowledgements, etc.
+- the title page is in ``front/title_page.tex``; update the project title, author, and semester.
+
+**Main Content**:
+- each section lives in ``contents/``. Just open the one you need to edit.
+
+**Appendices**:
+- code listings live in ``back/code.tex``; bibliography in ``back/references.tex``.
+
+To replace the default cover page, comment or remove the ``\includepdf`` line in ``template_final_report.tex``.
 
 ## 📄 Example Sections
 
