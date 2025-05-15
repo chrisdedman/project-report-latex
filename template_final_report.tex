@@ -26,196 +26,46 @@
 %
 % --------------------------------------------------------------------------
 \documentclass[12pt]{report}
-\usepackage{graphicx} % For including images
-\usepackage{geometry} % For page layout
-\usepackage{fancyhdr} % For custom headers and footers
-\usepackage{setspace} % For line spacing
-\usepackage{booktabs} % For better tables
-\usepackage{amsmath}  % For mathematical formatting
-\usepackage{tabularx} % For tables with automatic width
-\usepackage{listings} % For code highlighting
-\usepackage{xcolor}   % For code highlighting
-\usepackage{pdfpages} % For including PDF pages
-\usepackage{float}    % For controlling figure placement
-\usepackage{hyperref} % For hyperlinks
-\usepackage{caption}  % For customizing captions
-
-% Layout: 1-inch margins all around
-\geometry{letterpaper, margin=1in}
-
-% Remove conflicting layout settings
-\setlength{\parskip}{1em}
-\setlength{\parindent}{2em}
-
-% Define preliminary page style (center bottom)
-\fancypagestyle{prelim}{
-  \fancyhf{}
-  \cfoot{\thepage}
-  \renewcommand{\headrulewidth}{0.1pt}
-  \renewcommand{\footrulewidth}{0pt}
-  \setlength{\footskip}{0.5in} % page number 0.5" from bottom
-}
-
-% Define main body page style (top right)
-\fancypagestyle{main}{
-  \fancyhf{}
-  \rhead{\thepage}
-  \renewcommand{\headrulewidth}{0pt}
-  \setlength{\headsep}{0.5in} % page number 0.5" from top
-}
-
-% Code style
-\definecolor{codegray}{gray}{0.95}
-\definecolor{darkergreen}{RGB}{0,100,0}
-\lstset{
-    basicstyle=\ttfamily\scriptsize,
-    keywordstyle=\color{blue},
-    stringstyle=\color{red},
-    commentstyle=\color{darkergreen},
-    numbers=left,
-    numberstyle=\tiny\color{gray},
-    stepnumber=1,
-    numbersep=5pt,
-    backgroundcolor=\color{codegray},
-    showspaces=false,
-    showstringspaces=false,
-    showtabs=false,
-    frame=lines,
-    framerule=0.5pt,
-    tabsize=2,
-    captionpos=b,
-    breaklines=true,
-    keepspaces=true,
-    breakatwhitespace=false,
-    escapeinside={\%*}{*)}
-}
-
-\hyphenation{op-tical net-works semi-conduc-tor}
-
-\renewcommand{\thesection}{\Roman{section}.}
-\renewcommand{\thesubsection}{\Alph{subsection}.}
-\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\alph{subsubsection}}
-
-\newcommand{\code}[1]{\texttt{\textcolor{blue}{#1}}}
-
-\makeatletter
-\renewcommand{\section}{\@startsection{section}{1}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}{\centering\normalfont\large\bfseries}}
-\makeatother
-
-\makeatletter
-\renewcommand{\subsection}{\@startsection
-  {subsection}{2}{0pt}        % name, level, indent
-  {1.5ex plus .2ex}           % space *before* subsection
-  {1ex plus .2ex}             % space *after* subsection
-  {\normalfont\scshape}       % style
-}
-\makeatother
-
-\makeatletter
-\renewcommand{\subsubsection}{\@startsection
-  {subsubsection}{3}{1em}     % name, level, indent
-  {1ex plus .2ex}             % space *before* subsection
-  {0.5ex plus .2ex}           % space *after* subsection
-  {\normalfont\itshape}       % style
-}
-\makeatother
-
-% Customizing captions
-\captionsetup{font=small, labelfont=bf}
+% -----------------------------------------------------
+% *** Preamble Content ***
+% -----------------------------------------------------
+\input{preamble/packages.tex} % Include all the packages
+\input{preamble/macros.tex}   % Include macros and custom commands
 
 \begin{document}
-
+% -----------------------------------------------------
+% *** Front Content ***
+% -----------------------------------------------------
 % ------------------------------------------------
 % *** Cover Page ***
 % ------------------------------------------------
 % Comment the following line to remove the cover page
-\includepdf[pages=1, pagecommand={\thispagestyle{empty}}]{figures/cover_page.pdf}
+\includepdf[pages=1, pagecommand={\thispagestyle{empty}}]{front/cover_page.pdf}
 
 % ------------------------------------------------
 % *** Title Page ***
 % ------------------------------------------------
-% This section is for the title page
-% TO-DO: You should add your project's title and your first and last name and your 
-% semester and year. 
-\doublespacing
-\phantomsection
-\begin{titlepage}
-    \begin{center}
-        \vspace*{2in}
-        {\Large \textbf{Project\_Title}}\\[0.2cm]
-        {\Large Final Report}\\[0.2cm]
-        \textit{A Project}\\[0.2cm]
-        \textit{Presented}\\[0.2cm]
-        \textit{To the Faculty of}\\[0.2cm]
-        \textbf{California State University, Dominguez Hills}\\[0.2cm]
-        \textit{In Partial Fulfillment of the Requirements}\\[0.2cm]
-        \textit{For the Degree Bachelor of Science in Computer Science}\\[2cm]
-        \textbf{By}\\[0.2cm]
-        Your\_First\_Name Your\_Last\_Name\\[0.2cm]
-        Semester Year
-    \end{center}
-\end{titlepage}
-
-\setcounter{page}{2} % Set the page number to 2 after the title page
+\input{front/title_page.tex}
 
 % ------------------------------------------------
 % *** Approval Page ***
 % ------------------------------------------------
-% This section is for the approval page
-% TO-DO: You should add your project's title and your first and last name in
-% capital letters.
-\newpage
-\phantomsection
-\addcontentsline{toc}{section}{Approval Page}
-\thispagestyle{empty}
-\text{} \\
-\textbf{PROJECT:} PROJECT\_TITLE\_IN\_CAPITAL\_LETTER\\[0.2cm]
-\textbf{AUTHOR:} YOUR\_FIRST\_NAME YOUR\_LAST\_NAME
-
-\vspace{6in}
-\hfill \textbf{APPROVED BY:}\\ \\
-\vspace{2cm}
-\hfill \noindent\rule{6cm}{0.4pt}
+\input{front/approval_page.tex}
 
 % ------------------------------------------------
 % *** Acknowledgements ***
 % ------------------------------------------------
-% This section is for acknowledgements or dedications
-\newpage
-\section*{Acknowledgements}
-\addcontentsline{toc}{section}{Acknowledgements}
-I would like to thank ...
+\input{front/acknowledgements.tex}
 
 % ------------------------------------------------
 % *** Table of Contents and List of Figures ***
 % ------------------------------------------------
-% This section is for the table of contents and list of figures 
-% It should automatically be updated as you add sections and figures
-% You do not need to manually add sections to the table of contents
-\singlespacing
-\newpage
-\phantomsection
-\addcontentsline{toc}{section}{Table of Contents}
-\tableofcontents
-\newpage
-\phantomsection
-\addcontentsline{toc}{section}{List of Figures}
-\listoffigures
-\newpage
-\phantomsection
-\addcontentsline{toc}{section}{List of Tables}
-\listoftables
+\input{front/toc.tex}
 
 % ------------------------------------------------
 % *** Abstract ***
 % ------------------------------------------------
-% This section is for the abstract of your report
-\doublespacing
-\newpage
-\section*{Abstract}
-\addcontentsline{toc}{section}{Abstract}
-This is the abstract of your project report. It should summarize the main points 
-of your project, including the problem you are addressing, your approach, and your results.
+\input{front/abstract.tex}
 
 % -----------------------------------------------------
 % *** Main Content ***
@@ -224,206 +74,74 @@ of your project, including the problem you are addressing, your approach, and yo
 % *** Section 1: Introduction ***
 % ------------------------------------------------
 % This section can be used for introduction or background information
-\newpage
-\section{Introduction}
-\subsection{Background}
-Add background information here...
-
-\subsection{Project Description}
-Your project description goes here...
-
-\subsection{Target Audience}
-Add target audience information here...
-
-\subsection{Motivation}
-Add motivation information here...
+\input{contents/introduction.tex}
 
 % ------------------------------------------------
 % *** Section 2: Prior Related Work ***
 % ------------------------------------------------
-% This section can be used for prior related work or literature review
-\newpage
-\section{Prior Related Work}
-\subsection{Prior Related Work 1}
-Add related work 1 information here...
-
-% Here is an example of using an image from the /figure folder.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/cs_csudh.png}
-    \caption{Computer Science Departement at CSUDH (figure example)}
-    \label{fig:CS_CSUDH_LOGO}
-\end{figure}
-
-\subsection{Prior Related Work 2}
-Add related work 2 information here...
-
-\subsection{Prior Related Work n}
-Add related work n information here...
+\input{contents/related_work.tex}
 
 % ------------------------------------------------
 % *** Section 3: Resources ***
 % ------------------------------------------------
-% This section can be used for resources or additional information
-% You can add any other section title and content here
-% You can as well duplicated this section for more sections
-\newpage
-\section{Resources}
-\subsection{Additional Resources}
-Add additional resources information here if needed...
+\input{contents/resources.tex}
 
 % ------------------------------------------------
 % *** Section 4: Use-Case Diagram ***
 % ------------------------------------------------
-% This section can be used for use-case diagrams or analysis
-\newpage
-\section{Use-Case Diagram}
-Use-case diagram information goes here...
-
-% Uncomment the following lines to include a use-case diagram
-% This is an example of how to include a picture into your report
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.5\textwidth]{figures/placeholder.png}
-%     \caption{use-case diagram}
-%     \label{fig:use_case_diagram}
-% \end{figure}
-
-\subsection{Actors}
-Add actors information here...
-
-\subsection{Use-Cases}
-Add use-cases information here...
+\input{contents/use_case.tex}
 
 % ------------------------------------------------
 % *** Section 5: Sequence Diagram ***
 % ------------------------------------------------
-% This section can be used for sequence diagrams or analysis
-\newpage
-\section{Sequence Diagram}
-Sequence diagram information goes here...
+\input{contents/sequence_diagram.tex}
 
 % ------------------------------------------------
 % *** Section 6: Class Diagram ***
 % ------------------------------------------------
-% This section can be used for class diagrams or analysis
-\newpage
-\section{Class Diagram}
-Class diagram information goes here...
+\input{contents/class_diagram.tex}
 
 % ------------------------------------------------
 % *** Section 7: Entity-Relationship Diagram ***
 % ------------------------------------------------
-% This section can be used for entity-relationship diagrams or analysis
-\newpage
-\section{Entity-Relationship Diagram}
-Entity-relationship diagram information goes here...
+\input{contents/er_diagram.tex}
 
 % ------------------------------------------------
 % *** Section 8: Frontend Developement ***
 % ------------------------------------------------
-% This section can be used for frontend development information
-% You can add any other section title and content here
-\newpage
-\section{Frontend Development}
-\subsection{Tools}
-Add tools information here...
-
-\subsection{Pages Navigation}
-Add pages navigation information here...
-
-\subsection{Frontend Development 1}
-Add frontend development 1 information here...
-
-\subsection{Frontend Development n}
-Add frontend development n information here...
+\input{contents/frontend.tex}
 
 % ------------------------------------------------
 % *** Section 9: Backend Development ***
 % ------------------------------------------------
-% This section can be used for backend development information
-% You can add any other section title and content here
-\newpage
-\section{Backend Development}
-\subsection{Tools}
-Add tools information here...
-
-\subsection{Backend Development 1}
-Add backend development 1 information here...
-
-\subsection{Backend Development n}
-Add backend development n information here...
+\input{contents/backend.tex}
 
 % ------------------------------------------------
 % *** Section 10: Contributions ***
 % ------------------------------------------------
-% This section can be used for contributions or acknowledgements
-% You can add any other section title and content here
-\newpage
-\section{Contributions}
-Add contributions information here...
+\input{contents/contributions.tex}
 
 % ------------------------------------------------
 % *** Section 11: Conclusion & Future Work ***
 % ------------------------------------------------
-% This section can be used for conclusion and future work
-% You can add any other section title and content here
-\newpage
-\section{Conclusion \& Future Work}
-Add conclusion and future work information here...
+\input{contents/conclusion.tex}
 
 % ------------------------------------------------
 % *** Section 12: Other Section ***
 % ------------------------------------------------
-% This section can be used for other information
-% You can add any other section title and content here
-\newpage
-\section{Other Section}
-Add other section information here...
+\input{contents/other.tex}
 
+% -----------------------------------------------------
+% *** Back Content ***
+% -----------------------------------------------------
 % ------------------------------------------------
 % *** Section 13: Code ***
 % ------------------------------------------------
-% This section can be used for code snippets or examples
-\newpage
-\section{Code}
-\begin{lstlisting}[language=Python, caption={Python Code Snippet}]
-def example_function():
-    # This is a comment
-    print("This is an example function.")
-    return True
-\end{lstlisting}
-
-\begin{lstlisting}[language=Go, caption={Golang Code Snippet}]
-package main
-import "fmt"
-func main() {
-    fmt.Println("This is an example Golang function.")
-}
-\end{lstlisting}
-
-\begin{lstlisting}[language=C++, caption={C++ Code Snippet}]
-#include <iostream>
-using namespace std;
-int main()
-{
-    // This is a comment
-    cout << "This is an example C++ function." << endl;
-    return 0;
-}
-\end{lstlisting}
+\input{back/code.tex}
 
 % ------------------------------------------------
-% *** Section 14: References ***
+% *** References ***
 % ------------------------------------------------
-% This section can be used for references
-\newpage
-\phantomsection
-\addcontentsline{toc}{section}{References}
-\renewcommand{\bibname}{References}
-\begin{thebibliography}{99}
-    \bibitem{key1} Author Name. \textit{Title of the Work}. Journal/Conference, Year.
-    \bibitem{key2} ...
-\end{thebibliography}
+\input{back/references.tex}
 
 \end{document}
